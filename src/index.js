@@ -15,11 +15,11 @@ const app = http.createServer((req, res) => {
     res.end();
 });
 
-const PORT = process.env.PORT || 3000;
+const LISTEN_PORT = process.env.LISTEN_PORT;
 
-if (process.env.NODE_ENV === "development") {
-    app.listen(PORT, () => {
-        console.log(`PSSL server running at port ${PORT}`);
+if (process.env.NODE_ENV === "development" || LISTEN_PORT) {
+    app.listen(LISTEN_PORT, () => {
+        console.log(`PSSL server running at port ${LISTEN_PORT}`);
     });
 } else {
     module.exports = app;
