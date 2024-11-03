@@ -1,0 +1,12 @@
+{
+    "name": "prebuilt-serverless-short-link",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "type": "commonjs",
+    "author": "noonomyen",
+    "repository": "https://github.com/noonomyen/prebuilt-serverless-short-link",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "node --watch ./src/index.js"
+    }
+}
