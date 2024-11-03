@@ -7,7 +7,7 @@ const app = http.createServer((req, res) => {
     res.setHeader("Cache-Control", "public, max-age=0");
 
     if (req.method === "GET") {
-        const path = url.parse(req.url).path;
+        const path = url.parse(req.url).pathname;
         if (list[path]) res.writeHead(302, { Location: list[path] });
         else res.writeHead(404);
     }
@@ -17,7 +17,7 @@ const app = http.createServer((req, res) => {
 
 const LISTEN_PORT = process.env.LISTEN_PORT;
 
-if (process.env.NODE_ENV === "development" || LISTEN_PORT) {
+if (LISTEN_PORT) {
     app.listen(LISTEN_PORT, () => {
         console.log(`PSSL server running at port ${LISTEN_PORT}`);
     });
